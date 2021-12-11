@@ -290,23 +290,23 @@ def info(update: Update, context: CallbackContext):
         text += "\n\nThe Disaster level of this person is <b>'GOD'</b>."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is member of the 'Wizard Throne Holder'."
+        text += "\n\nThis user is  the 'Father Of Bot'."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThe Disaster level of this person is 'Wizard Dragon'."
+        text += "\n\nThe Disaster level of this person is 'Dragon'."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThe Disaster level of this person is 'Wizard Demon'."
+        text += "\n\nThe Disaster level of this person is 'Demon'."
         disaster_level_present = True 
     elif user.id in TIGERS:
-        text += "\n\nThe Disaster level of this person is 'Wizard Tiger'."
+        text += "\n\nThe Disaster level of this person is 'Tiger'."
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nThe Disaster level of this person is 'Wizard Wolf'."
+        text += "\n\nThe Disaster level of this person is 'Wolf'."
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/NobaraBotUpdates/5">?</a>]'.format(
+        text += ' [<a href="https://t.me/DABI_UPDATES/9">?</a>]'.format(
             bot.username,
         )
 
@@ -476,7 +476,7 @@ def set_about_bio(update: Update, context: CallbackContext):
 
         if user_id == bot.id and sender_id not in DEV_USERS:
             message.reply_text(
-                "Erm... yeah, I only trust the Ackermans to set my bio.",
+                "Erm... yeah, I only trust the Fathers to set my bio.",
             )
             return
 
