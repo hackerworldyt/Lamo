@@ -65,20 +65,20 @@ def addpiro(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
         
     if int(user_id) in DEV_USERS:
-      message.reply_text("This member is already a Pro Developer")
+      message.reply_text("This member is already a God")
         
     if user_id in DRAGONS:
-        rt += "Requested HQ to promote a Dragon Disaster to Pro Developer."
+        rt += "Requested HQ to promote a Dragon Disaster to God."
         data['sudos'].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "Requested HQ to promote a Demon Disaster to Pro Developer."
+        rt += "Requested HQ to promote a Demon Disaster to God."
         data['supports'].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "Requested HQ to promote a Wolf Disaster to Pro Developer."
+        rt += "Requested HQ to promote a Criminal Disaster to God."
         data['whitelists'].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -89,7 +89,7 @@ def addpiro(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + "\nSuccessfully set Disaster level of {} to Pro Developer!".format(
+        rt + "\nSuccessfully set Disaster level of {} to God!".format(
             user_member.first_name))
 
     log_message = (
@@ -134,7 +134,7 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "Requested HA to promote a Wolf Disaster to Dragon."
+        rt += "Requested HA to promote a Criminal Disaster to Dragon."
         data['whitelists'].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -193,7 +193,7 @@ def addsupport(
         return ""
 
     if user_id in WOLVES:
-        rt += "Requested HA to promote this Wolf Disaster to Demon"
+        rt += "Requested HA to promote this Criminal Disaster to Demon"
         data['whitelists'].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -239,17 +239,17 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "This member is a Dragon Disaster, Demoting to Wolf."
+        rt += "This member is a Dragon Disaster, Demoting to Criminal."
         data['sudos'].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "This user is already a Demon Disaster, Demoting to Wolf."
+        rt += "This user is already a Demon Disaster, Demoting to Criminal."
         data['supports'].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        message.reply_text("This user is already a Wolf Disaster.")
+        message.reply_text("This user is already a Criminal Disaster.")
         return ""
 
     data['whitelists'].append(user_id)
@@ -260,7 +260,7 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
 
     update.effective_message.reply_text(
         rt +
-        f"\nSuccessfully promoted {user_member.first_name} to a Wolf Disaster!")
+        f"\nSuccessfully promoted {user_member.first_name} to a Criminal Disaster!")
 
     log_message = (
         f"#WHITELIST\n"
@@ -295,22 +295,22 @@ def addtiger(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "This member is a Dragon Disaster, Demoting to Tiger."
+        rt += "This member is a Dragon Disaster, Demoting to Assassin."
         data['sudos'].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "This user is already a Demon Disaster, Demoting to Tiger."
+        rt += "This user is already a Demon Disaster, Demoting to Assassin."
         data['supports'].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "This user is already a Wolf Disaster, Demoting to Tiger."
+        rt += "This user is already a Criminal Disaster, Demoting to Assassin."
         data['whitelists'].remove(user_id)
         WOLVES.remove(user_id)
 
     if user_id in TIGERS:
-        message.reply_text("This user is already a Tiger.")
+        message.reply_text("This user is already a Assassin.")
         return ""
 
     data['tigers'].append(user_id)
@@ -321,7 +321,7 @@ def addtiger(update: Update, context: CallbackContext) -> str:
 
     update.effective_message.reply_text(
         rt +
-        f"\nSuccessfully promoted {user_member.first_name} to a Tiger Disaster!"
+        f"\nSuccessfully promoted {user_member.first_name} to a Assassin Disaster!"
     )
 
     log_message = (
@@ -376,7 +376,7 @@ def rmpiro(update: Update, context: CallbackContext) -> str:
         return log_message
 
     else:
-        message.reply_text("This user is not a Pro Developer Disaster!")
+        message.reply_text("This user is not a God Disaster!")
         return ""
       
       
@@ -505,7 +505,7 @@ def removewhitelist(update: Update, context: CallbackContext) -> str:
 
         return log_message
     else:
-        message.reply_text("This user is not a Wizard Wolf Disaster!")
+        message.reply_text("This user is not a Criminal Disaster!")
         return ""
 
 
@@ -547,14 +547,14 @@ def removetiger(update: Update, context: CallbackContext) -> str:
 
         return log_message
     else:
-        message.reply_text("This user is not a Wizard Tiger Disaster!")
+        message.reply_text("This user is not a Assassin Disaster!")
         return ""
 
 
 @run_async
 @whitelist_plus
 def whitelistlist(update: Update, context: CallbackContext):
-    reply = "<b>Known Wolf Disasters 🐺:</b>\n"
+    reply = "<b>Known Criminal Disasters 🐺:</b>\n"
     bot = context.bot
     for each_user in WOLVES:
         user_id = int(each_user)
@@ -570,7 +570,7 @@ def whitelistlist(update: Update, context: CallbackContext):
 @run_async
 @whitelist_plus
 def tigerlist(update: Update, context: CallbackContext):
-    reply = "<b>Known Tiger Disasters 🐯:</b>\n"
+    reply = "<b>Known Assassin Disasters 🐯:</b>\n"
     bot = context.bot
     for each_user in TIGERS:
         user_id = int(each_user)
@@ -618,7 +618,7 @@ def sudolist(update: Update, context: CallbackContext):
 def devlist(update: Update, context: CallbackContext):
     bot = context.bot
     true_dev = list(set(DEV_USERS) - {OWNER_ID})
-    reply = "<b>Fathers  Of Bot ⚡️:</b>\n"
+    reply = "<b>  Gods ⚡️:</b>\n"
     for each_user in true_dev:
         user_id = int(each_user)
         try:
@@ -638,7 +638,7 @@ Group admins/group owners do not need these commands.
  ╠ `/demons`*:* Lists all Demon disasters
  ╠ `/tigers`*:* Lists all Tigers disasters
  ╠ `/wolves`*:* Lists all Wolf disasters
- ╠ `/heroes`*:* Lists all Hero Association members
+ ╠ `/gods`*:* Lists all Hero Association members
  ╠ `/adddragon`*:* Adds a user to Dragon
  ╠ `/adddemon`*:* Adds a user to Demon
  ╠ `/addtiger`*:* Adds a user to Tiger
@@ -726,7 +726,7 @@ WHITELISTLIST_HANDLER = CommandHandler(["whitelistlist", "wolves"],
 TIGERLIST_HANDLER = CommandHandler(["tigers"], tigerlist)
 SUPPORTLIST_HANDLER = CommandHandler(["supportlist", "demons"], supportlist)
 SUDOLIST_HANDLER = CommandHandler(["sudolist", "dragons"], sudolist)
-DEVLIST_HANDLER = CommandHandler(["devlist", "heroes"], devlist)
+DEVLIST_HANDLER = CommandHandler(["devlist", "gods"], devlist)
 
 dispatcher.add_handler(DEV_HANDLER)
 dispatcher.add_handler(SUDO_HANDLER)
