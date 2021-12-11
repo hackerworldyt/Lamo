@@ -176,6 +176,8 @@ def test(update: Update, context: CallbackContext):
 def start(update: Update, context: CallbackContext):
     args = context.args
     uptime = get_readable_time((time.time() - StartTime))
+    thrk_num = sql.num_users()
+    thrk_cha = sql.num_chats()
     if update.effective_chat.type == "private":
         if len(args) >= 1:
             if args[0].lower() == "help":
@@ -212,7 +214,7 @@ def start(update: Update, context: CallbackContext):
             update.effective_message.reply_photo(
                 EREN_IMG,
                 PM_START_TEXT.format(
-                    escape_markdown(first_name), escape_markdown(context.bot.first_name),
+                    uptime, thrk_num,thrk_cha
                 ),
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
@@ -233,23 +235,23 @@ def start(update: Update, context: CallbackContext):
                             ),
                             InlineKeyboardButton(
                                 text="🚦 ᴜᴘᴅᴀᴛᴇs 🚦",
-                                url="https://t.me/NobaraBotUpdates",
+                                url="https://t.me/Dabi_Updates",
                             ),
                         ],
                         [
                             InlineKeyboardButton(
                                 text=" ᴡɪᴢᴀʀᴅ ",
-                                url="https://t.me/NobaraBotUpdates/5",
+                                url="https://t.me/Dabi_updates/9",
                             ),
                             InlineKeyboardButton(
                                 text="ɢʀᴏᴜᴘ",
-                                url="https://t.me/The_Phantom_Troupe/",
+                                url="https://t.me/Villains_Association_1",
                             ),
                         ],
                         [
                             InlineKeyboardButton(
                                 text="⚓️ ʜᴇʟᴘ ⚓️",
-                                url="https://t.me/Nobara_superbot?start=help",
+                                url="https://t.me/voilet_probot?start=help",
                             ),
                         ],
                     ],
@@ -257,7 +259,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "A jujutsu Sorcerer Never Sleeps!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            "Voilet here for you!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime,
             ),
             parse_mode=ParseMode.HTML,
@@ -586,7 +588,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True,
         )
 
-        if OWNER_ID != 254318997 and DONATION_LINK:
+        if OWNER_ID !=  and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
@@ -634,7 +636,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "[I am now Alive!](https://telegra.ph/file/b4be86f0b493954bfa5aa.mp4)", parse_mode=ParseMode.MARKDOWN)
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "[I am Alive Sar Dont Keel Mi Pleez!](https://telegra.ph/file/138ca9fd4e1f59501de9a.mp4)", parse_mode=ParseMode.MARKDOWN)
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!",
