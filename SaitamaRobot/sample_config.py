@@ -21,10 +21,10 @@ class Config(object):
     OWNER_USERNAME = "horni_senpaii"
     SUPPORT_CHAT = "villainevil_support"  # Your own group for support, do not add the @
     JOIN_LOGGER = (
-        -1001488032952
+        -1001501815938
     )  # Prints any new group the bot is added to, prints just the name and ID.
     EVENT_LOGS = (
-        -1001488032952
+        -1001501815938
     )  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
 
     # RECOMMENDED
@@ -55,7 +55,7 @@ class Config(object):
     WORKERS = (
         8  # Number of subthreads to use. Set as number of threads your processor uses
     )
-    BAN_STICKER = ""  # banhammer marie sticker id, the bot will send this sticker before banning or kicking a user in chat.
+    BAN_STICKER = "CAACAgUAAxkDAAIac2G0kw9QBitR_bR63Pt88Bk3ubYZAAKnAwACNSuhVUY0xNw9n17HIwQ"  # banhammer marie sticker id, the bot will send this sticker before banning or kicking a user in chat.
     ALLOW_EXCL = True  # Allow ! commands as well as / (Leave this to true so that blacklist can work)
     CASH_API_KEY = (
         "awoo"  # Get your API key from https://www.alphavantage.co/support/#api-key
