@@ -23,7 +23,7 @@ from SaitamaRobot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-import SaitamaRobot.modules.sql.users_sql as sql
+import SaitamaRobot.modules.sql.users_sql as sq
 from SaitamaRobot.modules import ALL_MODULES
 from SaitamaRobot.modules.helper_funcs.chat_status import is_user_admin
 from SaitamaRobot.modules.helper_funcs.misc import paginate_modules
@@ -177,8 +177,8 @@ def test(update: Update, context: CallbackContext):
 def start(update: Update, context: CallbackContext):
     args = context.args
     uptime = get_readable_time((time.time() - StartTime))
-    thrk_num = sql.num_users()
-    thrk_cha = sql.num_chats()
+    thrk_num = sq.num_users()
+    thrk_cha = sq.num_chats()
     if update.effective_chat.type == "private":
         if len(args) >= 1:
             if args[0].lower() == "help":
