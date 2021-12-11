@@ -72,11 +72,19 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
- Yahho Watashi Nobara Desu, I am Groups Management Bot !! I can Help You Manage Your Group for you!!, send /help for command list...[.](https://telegra.ph/file/1f054a1f6e857f6c4428d.jpg)
+ ────「 𝐕𝐨𝐢𝐥𝐞𝐭 𝐄𝐯𝐞𝐫𝐠𝐚𝐫𝐝𝐞𝐧 」────
+➖➖➖➖➖➖➖➖➖➖➖
+An anime themed bot to manage your group
+Press /help to see the commands
+➖➖➖➖➖➖➖➖➖➖➖
+➢ uptime {},
+➢{} users, across {} chats.
+➖➖➖➖➖➖➖➖➖➖➖
+“𝑯𝒆𝒓𝒆 𝑰 𝒂𝒎 𝒓𝒆𝒂𝒅𝒚 𝒕𝒐 𝒉𝒆𝒍𝒑 𝒚𝒐𝒖 𝒎𝒂𝒏𝒂𝒈𝒆 𝒚𝒐𝒖𝒓 𝒈𝒓𝒑𝒔 𝒆𝒂𝒔𝒊𝒍𝒚...."
 """
 
 HELP_STRINGS = """
-Hey there, I'm Nobara Kugisaki!
+Hey there, I'm Voilet Evergarden!
 To make me functional, make sure that i have enough rights in your group.
 
 Helpful commands:
@@ -84,7 +92,7 @@ Helpful commands:
 - /help: Sends this message; I'll tell you more about myself!
 - /donate: Gives you info on how to support me and my creator.
 
-Join My Support If You Have Any Queries: @NobaraSupport
+Join My Support If You Have Any Queries: @VillanEvil_Support
 
 All commands can be used with the following: / !
 List of all the Modules:
@@ -93,7 +101,7 @@ List of all the Modules:
     "" if not ALLOW_EXCL else "📝All commands can either be used with / or !.",
 )
 
-EREN_IMG = "https://telegra.ph/file/8ab770904946c033f114e.jpg"
+EREN_IMG = "https://telegra.ph/file/d8d515b36537c6375246d.jpg"
 
 DONATE_STRING = """Durov Is my Cousin By The Way.."""
 
