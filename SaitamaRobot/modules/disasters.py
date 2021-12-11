@@ -125,7 +125,7 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        message.reply_text("This member is already a Wizard Dragon Disaster")
+        message.reply_text("This member is already a Dragon Disaster")
         return ""
 
     if user_id in DEMONS:
@@ -189,7 +189,7 @@ def addsupport(
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        message.reply_text("This user is already a Wizard Demon Disaster.")
+        message.reply_text("This user is already a Demon Disaster.")
         return ""
 
     if user_id in WOLVES:
@@ -249,7 +249,7 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        message.reply_text("This user is already a Wizard  Wolf Disaster.")
+        message.reply_text("This user is already a Wolf Disaster.")
         return ""
 
     data['whitelists'].append(user_id)
@@ -310,7 +310,7 @@ def addtiger(update: Update, context: CallbackContext) -> str:
         WOLVES.remove(user_id)
 
     if user_id in TIGERS:
-        message.reply_text("This user is already a Wizard Tiger.")
+        message.reply_text("This user is already a Tiger.")
         return ""
 
     data['tigers'].append(user_id)
@@ -570,7 +570,7 @@ def whitelistlist(update: Update, context: CallbackContext):
 @run_async
 @whitelist_plus
 def tigerlist(update: Update, context: CallbackContext):
-    reply = "<b>Known Wizard Tiger Disasters 🐯:</b>\n"
+    reply = "<b>Known Tiger Disasters 🐯:</b>\n"
     bot = context.bot
     for each_user in TIGERS:
         user_id = int(each_user)
@@ -586,7 +586,7 @@ def tigerlist(update: Update, context: CallbackContext):
 @whitelist_plus
 def supportlist(update: Update, context: CallbackContext):
     bot = context.bot
-    reply = "<b>Known Demon Wizard Disasters 👹:</b>\n"
+    reply = "<b>Known Demon Disasters 👹:</b>\n"
     for each_user in DEMONS:
         user_id = int(each_user)
         try:
@@ -602,7 +602,7 @@ def supportlist(update: Update, context: CallbackContext):
 def sudolist(update: Update, context: CallbackContext):
     bot = context.bot
     true_sudo = list(set(DRAGONS) - set(DEV_USERS))
-    reply = "<b>Known Wizard Dragon Disasters 🐉:</b>\n"
+    reply = "<b>Known Dragon Disasters 🐉:</b>\n"
     for each_user in true_sudo:
         user_id = int(each_user)
         try:
@@ -618,7 +618,7 @@ def sudolist(update: Update, context: CallbackContext):
 def devlist(update: Update, context: CallbackContext):
     bot = context.bot
     true_dev = list(set(DEV_USERS) - {OWNER_ID})
-    reply = "<b>Jujutsu Wizard Throne Holders ⚡️:</b>\n"
+    reply = "<b>Fathers  Of Bot ⚡️:</b>\n"
     for each_user in true_dev:
         user_id = int(each_user)
         try:
