@@ -164,7 +164,7 @@
        "MONGO_DB_URI": {
          "description": "Your Mongo Database Url, create it from https://cloud.mongodb.com/",
          "required": true,
-         "value": ""
+         "value": "mongodb+srv://abc:<abc>@cluster0.gbuhg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
        }, 
        "REDIS_URI": {
          "description": "Redis Url create one from redislabs.com.",
