@@ -476,7 +476,7 @@ def delsticker(update, context):
             )
     
 
-Credit = "This Plugin Made by Kittu (@A_viyu), if you're using this code in your bot. there is no issue but don't remove this line" 
+Credit = "This Plugin is Made for Voilet, if you're using this code in your bot. there is no issue but don't remove this line" 
 
 
 @Nobara(pattern="^/mmf ?(.*)")
@@ -493,7 +493,7 @@ async def handler(event):
     file = await bot.download_media(reply_message)
     msg = await event.reply("Memifying this image! Please wait")
 
-    if "Kittu" in Credit:
+    if "Voilet" in Credit:
        pass
 
     else: 
@@ -520,7 +520,7 @@ async def drawText(image_path, text):
     if os.name == "nt":
         fnt = "ariel.ttf"
     else:
-        fnt = "./SaitamaRobot/utils/BebasNeue-Regular.otf"
+        fnt = "./SaitamaRobot/utils/ASTERAv2.ttf"
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
     if ";" in text:
         upper_text, lower_text = text.split(";")
