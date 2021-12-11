@@ -169,7 +169,7 @@
        "REDIS_URI": {
          "description": "Redis Url create one from redislabs.com.",
          "required": true,
-         "value": ""
+         "value": "redis://AuraStar:LGbH3adlxFirM7vZqqTQn5u5hfJ3UOW8@redis-10746.c273.us-east-1-2.ec2.cloud.redislabs.com:10746/AuraStar"
        }, 
        "APP_ID": {
          "description": "API ID of 2nd telegram account if you dont have two accounts then use the same accounts API ID, but i recommend using 2nd accounts API ID",
