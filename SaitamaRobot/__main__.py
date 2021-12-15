@@ -23,7 +23,6 @@ from SaitamaRobot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-import SaitamaRobot.modules.sql.users_sql as sq
 from SaitamaRobot.modules import ALL_MODULES
 from SaitamaRobot.modules.helper_funcs.chat_status import is_user_admin
 from SaitamaRobot.modules.helper_funcs.misc import paginate_modules
@@ -78,8 +77,7 @@ PM_START_TEXT = """
 An anime themed bot to manage your group
 Press /help to see the commands
 ➖➖➖➖➖➖➖➖➖➖➖
-➢ uptime {},
-➢{} users, across {} chats.
+➢ uptime {}
 ➖➖➖➖➖➖➖➖➖➖➖
 “𝑯𝒆𝒓𝒆 𝑰 𝒂𝒎 𝒓𝒆𝒂𝒅𝒚 𝒕𝒐 𝒉𝒆𝒍𝒑 𝒚𝒐𝒖 𝒎𝒂𝒏𝒂𝒈𝒆 𝒚𝒐𝒖𝒓 𝒈𝒓𝒑𝒔 𝒆𝒂𝒔𝒊𝒍𝒚...."
 """
@@ -177,8 +175,8 @@ def test(update: Update, context: CallbackContext):
 def start(update: Update, context: CallbackContext):
     args = context.args
     uptime = get_readable_time((time.time() - StartTime))
-    thrk_num = sq.num_users()
-    thrk_cha = sq.num_chats()
+    #thrk_num = sq.num_users()
+    #thrk_cha = sq.num_chats()
     if update.effective_chat.type == "private":
         if len(args) >= 1:
             if args[0].lower() == "help":
@@ -215,7 +213,7 @@ def start(update: Update, context: CallbackContext):
             update.effective_message.reply_photo(
                 EREN_IMG,
                 PM_START_TEXT.format(
-                    uptime, thrk_num,thrk_cha
+                    uptime
                 ),
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
