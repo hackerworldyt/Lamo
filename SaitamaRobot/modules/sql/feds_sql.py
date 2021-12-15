@@ -4,7 +4,7 @@ from SaitamaRobot import dispatcher
 from SaitamaRobot.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
 from telegram.error import BadRequest, Unauthorized
-
+from sqlalchemy.sql.sqltypes import BigInteger
 
 class Federations(BASE):
     __tablename__ = "feds"
@@ -58,7 +58,7 @@ class BansF(BASE):
 
 class FedsUserSettings(BASE):
     __tablename__ = "feds_settings"
-    user_id = Column(Integer, primary_key=True)
+    user_id = Column(BigInteger, primary_key=True)
     should_report = Column(Boolean, default=True)
 
     def __init__(self, user_id):
