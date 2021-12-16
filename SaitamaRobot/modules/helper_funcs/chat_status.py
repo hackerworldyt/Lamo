@@ -364,7 +364,6 @@ def user_can_ban(func):
         if (
             not (member.can_restrict_members or member.status == "creator")
             and user not in DRAGONS
-            and user not in [777000, 1087968824]
         ):
             update.effective_message.reply_text(
                 "Sorry son, but you're not worthy to wield the banhammer.",
