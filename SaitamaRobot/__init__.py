@@ -86,7 +86,7 @@ if ENV:
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
     AI_API_KEY = os.environ.get("AI_API_KEY", None)
     WALL_API = os.environ.get("WALL_API", None)
-    MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
+    
     REDIS_URL = os.environ.get("REDIS_URL", None)
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
@@ -111,7 +111,7 @@ else:
 
     JOIN_LOGGER = Config.JOIN_LOGGER
     OWNER_USERNAME = Config.OWNER_USERNAME
-    ALLOW_CHATS = Config.ALLOW_CHATS
+    ALLOW_CHATS = True
     try:
         DRAGONS = set(int(x) for x in Config.DRAGONS or [])
         DEV_USERS = set(int(x) for x in Config.DEV_USERS or [])
@@ -185,6 +185,8 @@ updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("eren", API_ID, API_HASH)
 dispatcher = updater.dispatcher
 pbot = Client("ErenPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+
+MONGO_DB_URI = "mongodb+srv://riasvcdb:tech@cluster0.xvtvg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 mongo_client = MongoClient(MONGO_DB_URI)
 db = mongo_client.SaitamaRobot
 

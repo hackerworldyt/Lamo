@@ -221,7 +221,7 @@ def new_member(update: Update, context: CallbackContext):
                 )
                 continue
 
-elif new_mem.id in [1242979521]:
+            elif new_mem.id in [1242979521]:
                 update.effective_message.reply_photo("https://telegra.ph/file/89c0179b705403064c432.jpg",
                     "ATTENTION! DABI just joined the chat",
                     reply_to_message_id=reply,
