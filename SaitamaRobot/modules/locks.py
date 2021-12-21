@@ -23,7 +23,7 @@ from SaitamaRobot.modules.log_channel import loggable
 from SaitamaRobot.modules.connection import connected
 from SaitamaRobot.modules.sql.approve_sql import is_approved
 from SaitamaRobot.modules.helper_funcs.alternate import send_message, typing_action
-from SaitamaRobot.modules.helper_funcs.filters import CustomFilters
+
 
 ad = AlphabetDetector()
 
@@ -43,9 +43,7 @@ LOCK_TYPES = {
     "egame": Filters.dice,
     "rtl": "rtl",
     "button": "button",
-    "inline": "inline",
-    "anonchannel":
-    CustomFilters.is_anon_channel
+    "inline": "inline"
 }
 
 LOCK_CHAT_RESTRICTION = {
@@ -476,10 +474,6 @@ def build_lock_message(chat_id):
             locklist.append("button = `{}`".format(locks.button))
             locklist.append("egame = `{}`".format(locks.egame))
             locklist.append("inline = `{}`".format(locks.inline))
-            locklist.append("anonchannel = `{}`".format(locks.sticker, locks.audio, locks.voice, locks.document,
-                                                 locks.video, locks.videonote, locks.contact, locks.photo, locks.gif, locks.url,
-                                                 locks.bots, locks.forward, locks.game, locks.location, locks.emoji, locks.bigemoji,
-                                                 locks.anonchannel))
     permissions = dispatcher.bot.get_chat(chat_id).permissions
     permslist.append("messages = `{}`".format(permissions.can_send_messages))
     permslist.append("media = `{}`".format(permissions.can_send_media_messages))
