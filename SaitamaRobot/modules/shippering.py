@@ -7,8 +7,8 @@ from SaitamaRobot import pbot as app
 from SaitamaRobot.utils.errors import capture_err
 from SaitamaRobot.utils.dbfunctions import get_couple, save_couple
 
-__mod_name__ = "Shippering"
-__help__ = "/couples - To Choose Couple Of The Day"
+__mod_name__ = "Shipping"
+__help__ = "/detect_gay - To Choose Couple Of The Day"
 
 
 # Date and time
@@ -34,7 +34,7 @@ today = str(dt()[0])
 tomorrow = str(dt_tom())
 
 
-@app.on_message(filters.command("couples") & ~filters.edited)
+@app.on_message(filters.command("detect_gay") & ~filters.edited)
 @capture_err
 async def couple(_, message):
     if message.chat.type == "private":
