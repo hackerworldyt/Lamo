@@ -21,7 +21,7 @@ class VoiletTelegramHandler:
             try:
                 if can_disable:
                     self._dispatcher.add_handler(
-                        DisableAbleCommandHandler(command, func, filters=filters, run_async=run_async,
+                        DisableAbleCommandHandler(command, func, filters=filters,
                                                   pass_args=pass_args, admin_ok=admin_ok), group
                     )
                 else:
@@ -32,12 +32,12 @@ class VoiletTelegramHandler:
             except TypeError:
                 if can_disable:
                     self._dispatcher.add_handler(
-                        DisableAbleCommandHandler(command, func, filters=filters, run_async=run_async,
+                        DisableAbleCommandHandler(command, func, filters=filters,
                                                   pass_args=pass_args, admin_ok=admin_ok, pass_chat_data=pass_chat_data)
                     )
                 else:
                     self._dispatcher.add_handler(
-                        CommandHandler(command, func, filters=filters, run_async=run_async, pass_args=pass_args,
+                        CommandHandler(command, func, filters=filters, pass_args=pass_args,
                                        pass_chat_data=pass_chat_data)
                     )
                 log.debug(f"[KIGCMD] Loaded handler {command} for function {func.__name__}")
@@ -52,21 +52,21 @@ class VoiletTelegramHandler:
             try:
                 if can_disable:
                     self._dispatcher.add_handler(
-                        DisableAbleMessageHandler(pattern, func, friendly=friendly, run_async=run_async), group
+                        DisableAbleMessageHandler(pattern, func, friendly=friendly), group
                     )
                 else:
                     self._dispatcher.add_handler(
-                        MessageHandler(pattern, func, run_async=run_async), group
+                        MessageHandler(pattern, func), group
                     )
                 log.debug(f"[KIGMSG] Loaded filter pattern {pattern} for function {func.__name__} in group {group}")
             except TypeError:
                 if can_disable:
                     self._dispatcher.add_handler(
-                        DisableAbleMessageHandler(pattern, func, friendly=friendly, run_async=run_async)
+                        DisableAbleMessageHandler(pattern, func, friendly=friendly)
                     )
                 else:
                     self._dispatcher.add_handler(
-                        MessageHandler(pattern, func, run_async=run_async)
+                        MessageHandler(pattern, func)
                     )
                 log.debug(f"[KIGMSG] Loaded filter pattern {pattern} for function {func.__name__}")
 
