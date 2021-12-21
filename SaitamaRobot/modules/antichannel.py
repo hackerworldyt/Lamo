@@ -54,3 +54,10 @@ def eliminate_channel(update: Update, context: CallbackContext):
         sender_chat = message.sender_chat
         bot.ban_chat_sender_chat(sender_chat_id=sender_chat.id, chat_id=chat.id)
 
+__mod_name__ = "Anti-Channel"
+__help__ = """
+Anti Channel helps you in stopping and banning channels
+
+ • `/antichannel <on/off>`*:* enable anti channel
+• *Admins only:*
+"""
