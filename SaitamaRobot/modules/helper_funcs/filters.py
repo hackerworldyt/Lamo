@@ -1,6 +1,6 @@
 from SaitamaRobot import DEV_USERS, DRAGONS, DEMONS
 from telegram import Message
-from telegram.ext import BaseFilter, MessageFilter 
+from telegram.ext import BaseFilter
 
 
 class CustomFilters(object):
@@ -46,11 +46,4 @@ class CustomFilters(object):
 
     has_text = _HasText()
    
-    class _IsAnonChannel(MessageFilter):
-        def filter(self, message: Message):
-            if (message.from_user and message.from_user.id == 136817688 ):
-                return True
-            return False
-
-    is_anon_channel = _IsAnonChannel()
     #horny senpai chutiya
