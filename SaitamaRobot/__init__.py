@@ -186,6 +186,13 @@ telethn = TelegramClient("eren", API_ID, API_HASH)
 dispatcher = updater.dispatcher
 pbot = Client("ErenPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
+pbot.start()
+
+app = pbot.get_me()
+
+BOT_ID = app.id
+
+
 MONGO_DB_URI = "mongodb+srv://riasvcdb:tech@cluster0.xvtvg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 mongo_client = MongoClient(MONGO_DB_URI)
 db = mongo_client.SaitamaRobot
