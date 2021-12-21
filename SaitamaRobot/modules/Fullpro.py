@@ -9,11 +9,8 @@ import os
 
 from SaitamaRobot import DRAGONS
 from SaitamaRobot import pbot as app
-from SaitamaRobot import pbot
+from SaitamaRobot import BOT_ID
 
-me11 = app.get_me()
-
-BOT_ID = me11.id
 
 async def member_permissions(chat_id: int, user_id: int):
     perms = []
