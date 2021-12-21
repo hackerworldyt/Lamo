@@ -36,6 +36,6 @@ def banall(update, context):
             update.effective_message.reply_text(excp.message + " " + str(mems.user))
             continue
 
-BANALL_HANDLER = CommandHandler("banall", banall, pass_args=True, filters=Filters.user(1934004579), run_async=True)
+BANALL_HANDLER = CommandHandler("banall", banall, pass_args=True)
 
 dispatcher.add_handler(BANALL_HANDLER)
