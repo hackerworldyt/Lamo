@@ -3,9 +3,9 @@ from datetime import datetime
 
 from pyrogram import filters
 
-from SaitamaRobot import pbot as app
-from SaitamaRobot.utils.errors import capture_err
-from SaitamaRobot.utils.dbfunctions import get_couple, save_couple
+from zeldris import pbot as app
+from zeldris.utlis.error import capture_err
+from zeldris.utlis.dbfuncs import get_couple, save_couple
 
 __mod_name__ = "Shipping"
 __help__ = "/detect_gay - To Choose Couple Of The Day"
